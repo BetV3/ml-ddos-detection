@@ -106,8 +106,6 @@ if __name__ == "__main__":
     layers = [
         Dense(2, 10),  # Input layer (2 features) to hidden layer (10 neurons)
         ReLU(),        # ReLU activation
-        Dense(10, 10), # Second hidden layer
-        ReLU(),        # ReLU activation
         Dense(10, 2),  # Output layer (2 classes)
         Sigmoid()      # Sigmoid activation for binary classification
     ]
@@ -121,7 +119,7 @@ if __name__ == "__main__":
     history = model.train(
         X_train, y_train_one_hot,
         batch_size=32,
-        epochs=200,
+        epochs=1000,  # Increased to 1000 iterations as mentioned in your description
         X_val=X_test,
         y_val=y_test_one_hot
     )
